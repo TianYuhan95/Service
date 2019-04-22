@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>用户中心</title>
+
+<link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="../static/js/index.js" th:src="@{/js/index.js}"></script>
+<!-- Custom Theme files -->
+<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all" />
+<link href="../static/css/form.css" th:href="@{/css/form.css}" rel="stylesheet" type="text/css" media="all" />
+<link href="../static/css/eltab.css" th:href="@{/css/eltab.css}" rel="stylesheet" type="text/css" media="all" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="AI语音转文字,AI文字转语音,AI语音tts,AI语音api,androidAI语音,AI语音开放平台,AI语音技术,AI开放平台,AI语音云平台,语音识别,语音合成,人脸识别,语音交互，语音搜索,语音SDK,开放统计,语音唤醒,语义理解,声纹识别,语音交互广告,智能语音" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+</head>
+<body>
+	<!-- header-section-starts -->
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html" th:href="@{/index}">
+					<img src="../static/images/logo.png" th:src="@{/images/logo.png}" class="img-responsive" alt="" />
+					<span class="logo_text" >AI开放平台</span>
+				</a>
+			</div>
+			<div class="header-right">
+				<h4 th:text="${session.company_serial_number}"></h4>
+				<span class="menu"></span>
+				<div class="top-menu menu-left nav3">
+					<ul>                                              
+						<li><a href="index.html" th:href="@{/index}">首页</a></li>
+						<li>
+							<a href="javascript:void(0)">产品试用</a>
+							<div class="submenu">
+								<div class="submenu-title">语音合成</div>
+								<div class="submenu-list"><a href="">在线语音合成</a></div>
+								
+								<div class="mydivider"></div>
+								
+								<div class="submenu-title">语音识别</div>
+								<div class="submenu-list"><a href="">语音听写</a></div>
+								<div class="submenu-list"><a href="">语音转写</a></div>
+								<div class="submenu-list"><a href="">一句话转写</a></div>
+								
+								<div class="mydivider"></div>
+
+								<div class="submenu-title">语音扩展</div>
+								<div class="submenu-list"><a href="">自然语言理解</a></div>
+								<div class="submenu-list"><a href="">人机交互</a></div>
+								<div class="submenu-list"><a href="">声纹识别</a></div>
+								<div class="submenu-list"><a href="">文字识别</a></div>
+								<div class="submenu-list"><a href="">机器翻译</a></div>
+
+							</div>
+						</li>
+						<li><a href="../static/developer_center/dev_yyhc.html" th:href="@{/developer_center/dev_yyhc.html}">开发者中心</a></li>
+						<li><a href="../static/price_list/price_yytx.html" th:href="@{/price_list/price_yytx.html}">产品定价</a></li>
+						<!--li><a href="download.html">下载</a></li-->
+					</ul>
+				</div>
+
+				<div class="top-menu menu-right">
+					<ul>                                              
+						<li><a href="#" th:href="@{/logout}">登出</a></li>
+						<!--<li><a href="register.html">注册</a></li>-->
+						<li><a class="active" href="user.html" th:href="@{/user-center}">用户中心</a></li>
+					</ul>
+				</div>
+				
+				<!-- script for menu -->
+				<script>
+					
+				</script>
+			<!-- script for menu -->
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	
+	<!-- header-section-ends -->
+	<div class="content" style="min-height:700px;">
+		<div class="blog-section">
+			<div class="container">
+					<div class="col-md-3 right_column">
+						<section  class="sky-form">
+							<div class="product_right">
+								<h4 class="m_2"><span class="glyphicon glyphicon-user userspan" aria-hidden="true"></span>用户中心</h4>
+								<div>
+									<ul class="place">								
+										<li class="sort"><a href="user.html" th:href="@{/user-center}" class="active">账户总览</a></li>
+									</ul>
+									<div class="clearfix"> </div>
+						    </div>						  
+								<div>
+									<ul class="place">								
+										<li class="sort"><a href="modify_passwd.html">修改密码</a></li>
+									</ul>
+									<div class="clearfix"> </div>
+						    </div>						  
+						    
+							</div>
+						</section>
+						
+					</div>
+					<div class="col-md-9 left_column">
+						<div class="clearfix"> </div>
+						<p class="alert expire_time" role="alert" th:switch="${session.userinfo.status}">
+							<span th:case="0" th:text="'游客您好,您的体验将于'"></span>
+							<span th:case="1" th:text="'未授权用户您好,在线试用功能将于'"></span>
+							<span th:case="2" th:text="'用户您好,您购买的产品将于'"></span>
+
+							<span class="expire_date" th:text="${session.userinfo.end_date}">2019-12-20</span>到期！</p>
+			      		<div class="user_block">
+			        		<h3 class="small-title user_border">基本资料</h3>
+					  		<form name="form2" id="ff2" class="form-inline" method="post" action="##" onsubmit="return false">
+				        		<div class="user_info">
+				        			<p th:text="'用户名: '+${session.userinfo.login_name}">用户名：test</p>
+				        			<p th:text="'公司名称: '+${session.userinfo.company_name}">公司名称：南京飞蚂蚁有限公司</p>
+				        			<p >联系人：<input type="text" class="form-control" placeholder="联系人" name="user_name" id="user_name" value="小王" th:value="${session.userinfo.user_name}" required></p>
+				        			<p>手机号：<input type="text" class="form-control" placeholder="手机号" name="serial_number" id="serial_number" value="13600000000" th:value="${session.userinfo.serial_number}" required></p>
+									<p><button type="submit" class="btn btn-1 btn-1c" name="modify_user" id="modify_user" th:onclick="accountModify()">保存资料</button></p>
+				        		</div>
+					  		</form>
+			      		</div>
+					</div>
+			</div>
+					<div class="clearfix"></div>
+		</div>
+	</div>
+
+	</div>
+	<div class="footer text-center">
+		<div class="copyright">
+			<p>Copyright &copy; 2019.聚力云成 All rights reserved.</p>
+		</div>
+	</div>
+<script type="text/javascript" th:inline="javascript">
+	function accountModify(){
+		$.ajax({
+			url: /*[[@{\/user-center\/account\/modify}]]*/,
+			type: "POST",
+			data: $("#ff2").serialize(),
+			datatype: "json",
+			success: function (data) {
+				if (data){
+					alert("更改资料成功");
+				}
+				else {
+					alert("更改资料失败,请稍后再试");
+				}
+			}
+		});
+	}
+
+</script>
+</body>
+</html>

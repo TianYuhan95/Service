@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>注册</title>
+
+<link href="/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="/js/index.js" th:src="@{/js/index.js}"></script>
+<!-- Custom Theme files -->
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="AI语音转文字,AI文字转语音,AI语音tts,AI语音api,androidAI语音,AI语音开放平台,AI语音技术,AI开放平台,AI语音云平台,语音识别,语音合成,人脸识别,语音交互，语音搜索,语音SDK,开放统计,语音唤醒,语义理解,声纹识别,语音交互广告,智能语音" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body>
+	<!-- header-section-starts -->
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a th:href="@{/index}">
+					<img src="/images/logo.png" th:src="@{/images/logo.png}" class="img-responsive" alt="" />
+					<span class="logo_text" >AI开放平台</span>
+				</a>
+			</div>
+			<div class="header-right">
+				<h4 th:text="${session.company_serial_number}">(025) 52375236</h4>
+				<span class="menu"></span>
+				<div class="top-menu menu-left nav3">
+					<ul>                                              
+						<li><a th:href="@{/index}">首页</a></li>
+						<li>
+							<a href="javascript:void(0)">产品试用</a>
+							<div class="submenu">
+								<div class="submenu-title">语音合成</div>
+								<div class="submenu-list"><a href="">在线语音合成</a></div>
+								
+								<div class="mydivider"></div>
+								
+								<div class="submenu-title">语音识别</div>
+								<div class="submenu-list"><a href="">语音听写</a></div>
+								<div class="submenu-list"><a href="">语音转写</a></div>
+								<div class="submenu-list"><a href="">一句话转写</a></div>
+								
+								<div class="mydivider"></div>
+
+								<div class="submenu-title">语音扩展</div>
+								<div class="submenu-list"><a href="">自然语言理解</a></div>
+								<div class="submenu-list"><a href="">人机交互</a></div>
+								<div class="submenu-list"><a href="">声纹识别</a></div>
+								<div class="submenu-list"><a href="">文字识别</a></div>
+								<div class="submenu-list"><a href="">机器翻译</a></div>
+
+							</div>
+						</li>
+						<li><a href="/developer_center/dev_yyhc.html">开发者中心</a></li>
+						<li><a href="../static/price_list/price_yytx.html">产品定价</a></li>
+						<li><a href="download.html">下载</a></li>
+					</ul>
+				</div>
+
+				<div class="top-menu menu-right">
+					<ul>                                              
+						<li><a th:href="@{/login}">登录</a></li>
+						<li><a th:href="@{/register}" class="active">注册</a></li>
+					</ul>
+				</div>
+				
+				<!-- script for menu -->
+				<script>
+				$( "span.menu" ).click(function() {
+				  $( ".top-menu" ).slideToggle( "slow", function() {
+				    // Animation complete.
+				  });
+				});
+			</script>
+			<!-- script for menu -->
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- header-section-ends -->
+	<div class="content">
+			<div class="row register">
+				<div class="heading"><h2>欢迎加入AI开放平台</h2></div>
+				<div class="col-md-6">
+					<img th:src="@{/images/index-1_img-5.jpg}">
+				</div>
+				<div class="col-md-6" style="text-align:left;">
+					<div class="heading"><h3>新用户注册</h3></div>
+					<form name="form2" id="ff2" onsubmit="return false" method="post" th:action="@{#}">
+						<div class="form-group">
+							<p id="errmsg" class="errmsg">用户名已被注册</p>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="用户名" name="login_name" id="login_name"
+								   th:onblur="checkLoginName()" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="公司名称" name="company_name" id="company_name" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="联系人" name="user_name" id="user_name" required>
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" placeholder="手机号" name="serial_number" id="serial_number" required>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="密码" name="password" id="password" required>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="确认密码:" name="repassword" id="repassword" required>
+						</div>
+						<button type="submit" class="btn btn-1 btn-1c" name="register" id="register" th:onclick="regist()">立即注册</button>
+						<a href="login.html" class="now_register" th:href="@{/login}">已有账号?现在登录</a>
+					</form>
+
+				</div>
+				
+			</div>
+	</div>
+	
+	
+	<div class="footer text-center">
+		<div class="copyright">
+			<p>Copyright &copy; 2019.聚力云成 All rights reserved.</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" th:inline="javascript">
+		function checkLoginName() {
+			var login_name = document.getElementById("login_name").value;
+			$.ajax({
+				type:"GET",
+				dataType:"json",
+				url:/*[[@{\/register\/checkLoginName}]]*/,
+				data:{"login_name":login_name},
+				success:function (result) {
+					if(!result)
+						$("#errmsg").show();
+					else
+						$("#errmsg").hide();
+				}
+			});
+		}
+		function regist() {
+			$.ajax({
+				type:"POST",
+				dataType:"json",
+				url:/*[[@{\/register\/makeregist}]]*/,
+				data:$('#ff2').serialize(),
+				success:function (result) {
+					if(result.flag == 200){
+						alert("注册成功");
+						window.location.href=/*[[@{\/index}]]*/;
+					}
+					else
+						alert(result.info);
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>

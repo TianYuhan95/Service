@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>AI开放平台-以语音交互为核心的人工智能开放平台</title>
+
+	<link href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+	<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+	<script src="../static/js/index.js" th:src="@{/js/index.js}"></script>
+	<!-- Custom Theme files -->
+	<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="AI语音转文字,AI文字转语音,AI语音tts,AI语音api,androidAI语音,AI语音开放平台,AI语音技术,AI开放平台,AI语音云平台,语音识别,语音合成,人脸识别,语音交互，语音搜索,语音SDK,开放统计,语音唤醒,语义理解,声纹识别,语音交互广告,智能语音" />
+
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<!--link href='http://fonts.useso.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'-->
+</head>
+<body>
+	<!-- header-section-starts -->
+	<div id="header" th:insert="fragments/fragment::header"></div>
+	<!--<div class="header">-->
+		<!--<div class="container">-->
+			<!--<div class="logo">-->
+				<!--<a href="index.html" th:href="@{/index}">-->
+					<!--<img src="../static/images/logo.png" th:src="@{/images/logo.png}" class="img-responsive" alt="" />-->
+					<!--<span class="logo_text" >AI开放平台</span>-->
+				<!--</a>-->
+			<!--</div>-->
+			<!--<div class="header-right">-->
+				<!--<h4 th:text="${session.company_serial_number}">(025) 52375236</h4>-->
+				<!--<span class="menu"></span>-->
+				<!--<div class="top-menu menu-left nav3">-->
+					<!--<ul>                                              -->
+						<!--<li><a class="active" href="index.html" th:href="@{/index}">首页</a></li>-->
+						<!--<li>-->
+							<!--<a href="javascript:void(0)">产品试用</a>-->
+							<!--<div class="submenu">-->
+								<!--<div class="submenu-title">语音合成</div>-->
+								<!--<div class="submenu-list"><a href="">在线语音合成</a></div>-->
+								<!---->
+								<!--<div class="mydivider"></div>-->
+								<!---->
+								<!--<div class="submenu-title">语音识别</div>-->
+								<!--<div class="submenu-list"><a href="#" th:href="@{/onlineuse/voiceDictation}">语音听写</a></div>-->
+								<!--<div class="submenu-list"><a href="">语音转写</a></div>-->
+								<!--<div class="submenu-list"><a href="">一句话转写</a></div>-->
+								<!---->
+								<!--<div class="mydivider"></div>-->
+
+								<!--<div class="submenu-title">语音扩展</div>-->
+								<!--<div class="submenu-list"><a href="">自然语言理解</a></div>-->
+								<!--<div class="submenu-list"><a href="">人机交互</a></div>-->
+								<!--<div class="submenu-list"><a href="">声纹识别</a></div>-->
+								<!--<div class="submenu-list"><a href="">文字识别</a></div>-->
+								<!--<div class="submenu-list"><a href="">机器翻译</a></div>-->
+
+							<!--</div>-->
+						<!--</li>-->
+						<!--<li><a href="developer_center/dev_yyhc.html">开发者中心</a></li>-->
+						<!--<li><a href="../static/price_list/price_yytx.html" th:href="@{/price_list/price_yytx.html}">产品定价</a></li>-->
+						<!--&lt;!&ndash;li><a href="download.html">下载</a></li&ndash;&gt;-->
+					<!--</ul>-->
+				<!--</div>-->
+
+				<!--<div class="top-menu menu-right">-->
+					<!--<ul>-->
+						<!--<li th:switch="${session.flag}">-->
+							<!--<a th:case="0" th:href="@{/login}">登录</a>-->
+							<!--<a th:case="1" th:href="@{/logout}">登出</a>-->
+						<!--</li>-->
+						<!--<li th:if="${session.flag} ne 1"><a th:href="@{/register}">注册</a></li>-->
+						<!--<li th:if="${session.flag} eq 1"><a href="user.html" th:href="@{/user-center}">用户中心</a></li>-->
+					<!--</ul>-->
+				<!--</div>-->
+				<!---->
+				<!--&lt;!&ndash; script for menu &ndash;&gt;-->
+				<!--<script>-->
+					<!---->
+				<!--</script>-->
+				<!--&lt;!&ndash; script for menu &ndash;&gt;-->
+
+			<!--</div>-->
+			<!--<div class="clearfix"></div>-->
+		<!--</div>-->
+	<!--</div>-->
+	
+	
+	<!-- header-section-ends -->
+	<div class="banner">
+		<div class="container">
+			<div class="banner-info">
+				<h2>一键接入AI技术</h2>
+				<p>提供丰富完善的AI产品体系，专业的技术支持团队，开启你的AI之旅</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="services-section">
+			<div class="container">
+				<h3>我们的产品</h3>
+				<div class="services-section-grids">
+					<div class="col-md-4 services-section-grid1">
+						<div class="services-section-grid1-top">
+							<h4>语音合成</h4>
+							<p>将用户输入的文字转换为流畅自然的语音输出，打破传统文字式人机交互的方式</p>
+							<ul class="service-list">
+	              <li>
+	                <i class="icons-service-logo icon_zx"></i>
+	                <p class="service-title">在线语音合成</p>
+	              </li>
+	            </ul>
+
+						</div>
+						<div class="services-section-grid1-bottom">
+							<h4>人机交互</h4>
+							<p>实现人与机器之间通过文本无障碍交互</p>
+							<ul class="service-list">
+		            <li>
+		              <i class="icons-service-logo icon_rjjh"></i>
+		              <p class="service-title">人机交互</p>
+		            </li>
+		          </ul>
+						</div>
+					</div>
+					<div class="col-md-4 services-section-grid2">
+						<div class="services-section-grid2-top">
+							<h4>语音识别</h4>
+							<p>把实时语音转换成对应的文字信息，让机器能够“听懂”人类语言</p>
+							<ul class="service-list">
+	              <li>
+	                <i class="icons-service-logo icon_tx"></i>
+	                <p class="service-title">语音听写</p>
+	              </li>
+	              <li>
+	                <i class="icons-service-logo icon_yyzx"></i>
+	                <p class="service-title">语音转写</p>
+	              </li>
+	              <li>
+	                <i class="icons-service-logo icon_yjh"></i>
+	                <p class="service-title">一句话转写</p>
+	              </li>
+	            </ul>
+	        	</div>
+	          <div class="services-section-grid2-bottom">
+							<h4>模式识别</h4>
+							<p>提取说话人的声音特征，核验说话人身份</p>
+							<ul class="service-list">
+		            <li>
+		              <i class="icons-service-logo icon_swsb"></i>
+		              <p class="service-title">声纹识别</p>
+		            </li>
+		          </ul>
+						</div>
+					</div>
+					<div class="col-md-4 services-section-grid3">
+						<div class="services-section-grid3-top">
+							<h4>语义理解</h4>
+							<p>对自然语言的词性分析、实体识别、关键词提取、文本摘要、文本分类、语义联想的处理</p>
+							<ul class="service-list">
+		            <li>
+		              <i class="icons-service-logo icon_zryy"></i>
+		              <p class="service-title">自然语言理解</p>
+		            </li>
+		          </ul>
+						</div>
+						<div class="services-section-grid3-bottom">
+							<h4>语音扩展</h4>
+							<p>自动检测翻译生成译文</p>
+							<ul class="service-list">
+	              <li>
+	                <i class="icons-service-logo icon_tx"></i>
+	                <p class="service-title">文字识别</p>
+	              </li>
+	              <li>
+	                <i class="icons-service-logo icon_yyzx"></i>
+	                <p class="service-title">机器翻译</p>
+	              </li>
+	            </ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contact-section text-center">
+		<div class="container">
+			<h3>联系我们</h3>
+			<div class="contact-top">
+				<div class="col-md-6 contact-section-grid text-center">
+					<i class="smartphone"></i>
+					<p th:text="'Phone : '+${session.company_serial_number}">Phone : (025) 52375236</p>
+				</div>
+
+				<div class="col-md-6 contact-section-grid text-center">
+					<i class="global"></i>
+					<p><a href="mail-to:jlycdz@qq.com" th:href="${session.company_email}"
+						  th:text="${session.company_email}">jlycdz@qq.com</a></p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+		</div>	
+	</div>
+	
+	<div class="footer text-center">
+		<div class="copyright">
+			<p>Copyright &copy; 2019.聚力云成 All rights reserved.</p>
+		</div>
+	</div>
+
+<!-- login -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content modal-info">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						</div>
+						<div class="modal-body real-spa">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //login -->
+			<!-- Register -->
+			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content modal-info">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						</div>
+						<div class="modal-body real-spa">
+							<div class="login-grids">
+								<div class="login">
+									<div class="login-right">
+										<form>
+											<h3>Register </h3>
+											<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+											<input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
+											<input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">	
+											<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">	
+											
+											<input type="submit" value="Register Now" >
+										</form>
+									</div>
+									<div class="clearfix"></div>								
+								</div>
+								<p>By logging in you agree to our <a href="#">Terms</a> and <a href="#">Conditions</a> and <a href="#">Privacy Policy</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //Register -->
+<script type="text/javascript"	th:inline="javascript">
+	sessionStorage.setItem("flag",[[${session.flag}]]);
+	sessionStorage.setItem("company_email",[[${session.company_email}]]);
+	sessionStorage.setItem("company_serial_number",[[${session.company_serial_number}]]);
+</script>
+			
+</body>
+</html>
