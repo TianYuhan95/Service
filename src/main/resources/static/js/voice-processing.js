@@ -9,7 +9,7 @@ function initMain(){
 }
 
 //websocket连接地址
-var WEB_SOCKET_SERVER = 'wss://39.108.125.225:8010/api/online_decoder';
+var WEB_SOCKET_SERVER = 'wss://39.108.125.225:8101/api/online_decoder';
 // var WEB_SOCKET_SERVER = 'wss://' + window.location.hostname + ':8101/api/online_decoder';
 //var WEB_SOCKET_SERVER = 'wss://192.168.6.2:8101/api/online_decoder';
 var SEND_INTERVAL = '150';
