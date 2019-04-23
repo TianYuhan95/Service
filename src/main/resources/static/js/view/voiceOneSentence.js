@@ -18,6 +18,7 @@ function uploadFiles(v) {
         processData:false,
         data: fd,
         success: function (res) {
+            console.log(res);
             if(res.err==0){ //res.err为0为操作成功，否则请求失败，res.errMsg为错误信息
                 //res.data为转文本内容绑定到页面
                 $("#mainArea").val(res.data);

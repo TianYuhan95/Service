@@ -26,20 +26,20 @@
 </head>
 <body>
 <!-- header-section-starts -->
-<div class="header" th:insert="fragments/fragment::header"></div>
+<div id="header" th:insert="fragments/fragment::header"></div>
 <div id="wrapper">
     <div class="overlay"></div>
     <div id="SideBar" th:insert="fragments/fragment::sidebar"></div>
     <div id="page-content-wrapper">
-        <button id="navbutton" type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas" >
+        <div class="my_banner">
+            <button id="navbutton" type="button" class="hamburger my_hamburger is-closed animated fadeInLeft" data-toggle="offcanvas" >
             <span class="hamb-top" style="background-color: black"></span>
             <span class="hamb-middle" style="background-color: black"></span>
             <span class="hamb-bottom" style="background-color: black"></span>
-        </button>
-        <div class="my_banner" th:style="'background: url('+@{/images/timg2.jpg}+') no-repeat 0px 0px;background-size:cover;min-height:294px;position: relative;'">
-            <div class="my_container" style="float: left;margin-top: 40px;margin-left: 10px;min-width: 30%;background-color: white;border: 1px solid gray;">
-                <div class="my_banner_info">
-                    <h2 style="font-size: 40px;font-weight: bolder;">一句话转写</h2>
+            </button>
+            <div class="container my_container">
+                <div class="my_banner_info" style="margin: 0;padding: 0;border: 0;font: inherit;font-size: 100%;vertical-align: baseline;">
+                    <h2>一句话转写</h2>
                     <br/>
                     <p style="color: black">语音转写（Long Form ASR）基于深度全序列卷积神经网络，将长</p>
                     <br/>
@@ -64,16 +64,17 @@
                                 <div class="voice-listen" style="padding-bottom: 0px; height: 100%;width: 98%;margin-left: 30px;">
                                     <div id="voiceFir" style="height: 80%;float: left;width: 40%;">
                                         <div class="severBox" style="float: left; height: 100%;width: 100%;">
-                                            <div class="controls">
-                                                <div>清除日志</div>
-                                                <div>清除结果</div>
+                                            <div class="controls my_controls">
+                                                <div class="btn btn-danger" style="margin-right: 10px">清除日志</div>
+                                                <div class="btn btn-danger" style="margin-right: 10px">清除结果</div>
                                             </div>
                                             <textarea readonly="readonly"
                                                       style="height: 80%; border: 2px solid rgb(220, 228, 236); border-radius: 4px; width: 100%; margin-top: 10px; resize: none;"></textarea>
                                         </div>
                                     </div>
                                     <div id="voiceSec" style="height: 80%;float: left;width: 40%;margin-left: 10px;">
-                                        <textarea class="text-area" style="height: 80%;margin-top: 53px;" id="mainArea"></textarea>
+                                        <textarea class="text-area"
+                                                  style="height: 80%; border: 2px solid rgb(220, 228, 236); border-radius: 4px; width: 100%; margin-top: 11%; resize: none;" id="mainArea"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -84,8 +85,9 @@
         </div>
     </div>
     <div class="toTop el-tooltip" style="display: none;"><span class="el-icon-arrow-up"></span></div>
+    <div id="footer" th:insert="fragments/fragment::footer"></div>
 </div>
-<div id="footer" th:insert="fragments/fragment::footer"></div>
+
 
 <script th:src="@{/js/voice-processing.js}"></script>
 <script th:src="@{/js/record-upload/mic-recorder.js}"></script>

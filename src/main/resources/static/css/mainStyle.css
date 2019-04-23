@@ -3,12 +3,12 @@
 /*-------------------------------*/
 /*           VARIABLES           */
 /*-------------------------------*/
-body {
+my_body {
   position: relative;
   overflow-x: hidden;
 }
-body,
-html {
+my_body,
+my_html {
   height: 100%;
   background-color: white;
 }
@@ -286,25 +286,25 @@ html {
   z-index: 1;
 }
 /* SOME DEMO STYLES - NOT REQUIRED */
-body,
-html {
+my_body,
+my_html {
   /*background-color: #583e7e;*/
 }
-body h1,
-body h2,
-body h3,
-body h4 {
+my_body h1,
+my_body h2,
+my_body h3,
+my_body h4 {
   color: rgba(255, 255, 255, 0.9);
 }
-body p,
-body blockquote {
+my_body p,
+my_body blockquote {
   color: rgba(255, 255, 255, 0.7);
 }
-body a {
+my_body a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: underline;
 }
-body a:hover {
+my_body a:hover {
   color: #ffffff;
 }
 

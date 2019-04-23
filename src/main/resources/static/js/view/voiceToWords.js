@@ -11,11 +11,11 @@ var startUploadInteval;
 function uploadFiles(v) {
     var fd = new FormData();
     fd.append('files', v.files[0]);  //files为页面选取的文件
-    var loading = this.$loading({
-        lock: true,
-        text: '语音合成中...',
-        spinner: 'el-icon-loading'
-    });
+    // var loading = this.$loading({
+    //     lock: true,
+    //     text: '语音合成中...',
+    //     spinner: 'el-icon-loading'
+    // });
     $.ajax({
         url: 'https://39.108.125.225:8010/api/offline_decoder/send_voice_data_async',
         type:'post',
@@ -23,6 +23,7 @@ function uploadFiles(v) {
         contentType: false,
         processData:false,
         success: function (res) {
+            console.log(res);
             if(res.err==0){ //res.err为0为操作成功，否则请求失败，res.errMsg为错误信息
                 guid = res.data;
                 loading.close();
