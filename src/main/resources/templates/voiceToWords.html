@@ -88,7 +88,18 @@
             </div>
             <div class="toTop el-tooltip" style="display: none;"><span class="el-icon-arrow-up"></span></div>
         </div>
+    </div>
 </div>
 <div id="footer" th:insert="fragments/fragment::footer"></div>
+<script>
+    $(function(){
+        var height = window.innerHeight - 240;
+        $('#page-content-wrapper').height(height);
+        $(window).resize(function(){
+            var height = window.innerHeight - 240;
+            $('#page-content-wrapper').height(height);
+        })
+    })
+</script>
 </body>
 </html>

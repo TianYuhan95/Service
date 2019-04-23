@@ -94,5 +94,15 @@
 <!--<script th:src="@{/js/manifest.208cd90c1521811b0c99.js?26eb823d0896298c53dd}"></script>-->
 <!--<script th:src="@{/js/vendor.3d1c8a04268b9742287e.js?26eb823d0896298c53dd}"></script>-->
 <!--<script th:src="@{/js/module/index.17670862aec891136c91.js?26eb823d0896298c53dd}"></script>-->
+<script>
+    $(function(){
+        var height = window.innerHeight - 240;
+        $('#page-content-wrapper').height(height);
+        $(window).resize(function(){
+            var height = window.innerHeight - 240;
+            $('#page-content-wrapper').height(height);
+        })
+    })
+</script>
 </body>
 </html>

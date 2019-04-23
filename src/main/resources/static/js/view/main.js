@@ -1,5 +1,6 @@
-var nowPage = "";
-function initPage(nowPage){
+var pathname = window.document.location.pathname;
+var nowPage = pathname.substr(pathname.indexOf('/',pathname.substr(1).indexOf('/')+2)+1);
+function initPage(){
     var choseMenu = "";
     var url = window.location.href;
     // //根据栏目代码来改变右侧iframe的显示内容
@@ -19,7 +20,7 @@ function initPage(nowPage){
     // nowPage = window.parent.fatherNowPageText;
     // choseMenu[0].style.backgroundColor = '#FFFFFF';
     // choseMenu[0].style.color = "#000000";
-    if(nowPage == "语音听写" || nowPage == "语音转写" || nowPage == "一句话转写"  || nowPage == "语音合成"  || nowPage == "声纹识别" ){
+    if(nowPage == "voiceDictation" || nowPage == "voiceToWords" || nowPage == "voiceOneSentence"  || nowPage == "语音合成"  || nowPage == "声纹识别" ){
         document.getElementById("voiceRecognize").className = "nav nav-second-level collapse in";
         document.getElementById("voiceAnother").className = "nav nav-second-level";
         document.getElementById("systemManage").className = "nav nav-second-level";
@@ -68,9 +69,9 @@ $(document).ready(function () {
     /**缩进符号点击事件--start**/
     var trigger = $('.hamburger'),
         overlay = $('.overlay');
-        isClosed = true;
-    // hamburger_cross();
-    // $('#wrapper').toggleClass('toggled');
+        isClosed = false;
+        hamburger_cross();
+        $('#wrapper').toggleClass('toggled');
 
     trigger.click(function () {
         hamburger_cross();
@@ -98,10 +99,10 @@ $(document).ready(function () {
         }else if(isClosed == true && nowPage == "语音合成"){
             $("#external-frame").contents().find("#voice-listen").width("85%");
         }
-        else if(isClosed == false && (nowPage == "语音听写" || nowPage == "语音转写" || nowPage == "一句话转写")){
+        else if(isClosed == false && (nowPage == "voiceDictation" || nowPage == "voiceToWords" || nowPage == "voiceOneSentence")){
             $("#external-frame").contents().find("#voiceFir").width("45%");
             $("#external-frame").contents().find("#voiceSec").width("45%");
-        }else if(isClosed == true && (nowPage == "语音听写" || nowPage == "语音转写" || nowPage == "一句话转写")){
+        }else if(isClosed == true && (nowPage == "voiceDictation" || nowPage == "voiceToWords" || nowPage == "voiceOneSentence")){
             $("#external-frame").contents().find("#voiceFir").width("40%");
             $("#external-frame").contents().find("#voiceSec").width("40%");
         }
