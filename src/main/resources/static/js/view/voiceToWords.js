@@ -17,20 +17,21 @@ function uploadFiles(v) {
     //     spinner: 'el-icon-loading'
     // });
     $.ajax({
-        url: 'https://39.108.125.225:8010/api/offline_decoder/send_voice_data_async',
+        url: 'http://39.108.125.225:8889/api/offline_decoder/send_voice_data_async',
         type:'post',
         data: fd,
         contentType: false,
         processData:false,
         success: function (res) {
             console.log(res);
-            if(res.err==0){ //res.err为0为操作成功，否则请求失败，res.errMsg为错误信息
+            if(res.err=='0'){ //res.err为0为操作成功，否则请求失败，res.errMsg为错误信息
                 guid = res.data;
                 loading.close();
                 startUploadInteval=self.setInterval("startUpload()",2000)
             }
         },
         error: function (data) {
+            console.log(data)
         }
     })
 }
@@ -44,7 +45,7 @@ function uploadFiles(v) {
  */
 function startUpload(){
     $.ajax({
-        url: ' https://39.108.125.225:8010/api/offline_decoder/receive_voice_result',
+        url: ' http://39.108.125.225:8889/api/offline_decoder/receive_voice_result',
         type:'post',
         data: { Guid:guid }, //res.data为返回的guid，用guid获取转写进度
         success: function (res) {

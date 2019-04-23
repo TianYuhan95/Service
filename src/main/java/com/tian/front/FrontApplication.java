@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EnableAutoConfiguration
 @EnableTransactionManagement
 @MapperScan(basePackages = "com.tian.front.mapper")
 public class FrontApplication {
