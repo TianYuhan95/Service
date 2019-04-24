@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" class="my_html">
 <head>
     <title>AI开放平台-以语音交互为核心的人工智能开放平台</title>
 
@@ -20,6 +20,9 @@
     <!--<link rel="stylesheet" type="text/css" th:href="@{/css/module/index.2c797806eeee5aa835bef96e6843476c.css}" />-->
     <link rel="stylesheet" href="../static/css/mainStyle.css" th:href="@{/css/mainStyle.css}" />
     <link rel="stylesheet" href="../static/css/mystyle.css" th:href="@{/css/mystyle.css}" />
+    <link rel="stylesheet" href="../static/css/loading/loading.css" th:href="@{/css/loading/loading.css}" />
+    <link rel="stylesheet" href="../static/css/loading/global.css" th:href="@{/css/loading/global.css}" />
+    <link rel="stylesheet" href="../static/css/loading/animate.css" th:href="@{/css/loading/animate.css}" />
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <title>语音转写</title>
     <!--<link rel="stylesheet" type="text/css" th:href="@{/css/module/index.2c797806eeee5aa835bef96e6843476c.css}"/>-->
@@ -28,10 +31,11 @@
     <script th:src="@{../js/config/globalVar.js}"></script>
     <script th:src="@{/js/view/voiceToWords.js}"></script>
     <script th:src="@{/js/view/main.js}"></script>
+    <script th:src="@{/js/loading.js}"></script>
 </head>
-<body>
-<div id="header" th:insert="fragments/fragment::header"></div>
-<div id="wrapper">
+<body class="my_body">
+<div id="header" th:insert="fragments/fragment::header" class="my_header"></div>
+<div id="wrapper" class="my_wrapper">
     <div class="overlay"></div>
     <div id="SideBar" th:insert="fragments/fragment::sidebar"></div>
     <div id="page-content-wrapper">
@@ -54,10 +58,12 @@
                     </div>
                 </div>
                 <div class="voice-box" style="float: left; margin: 5% 0px 0px 4%;">
-                    <div id="head"><input id="headImg" type="file" style="display: none;" @change="uploadFiles"></div>
-                    <img src="data:image/png;base64,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"
-                         alt="" width="124.83" height="124.83" style="cursor: pointer;" onclick="clickUpload()">
-                    <div class="text-center" style="margin-top: 0px;">上传语音文件</div>
+                    <div id="head"><input id="headImg" type="file" style="display: none;" onchange="uploadFiles(this)"></div>
+                    <div id="upload">
+                        <img src="data:image/png;base64,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"
+                             alt="" width="124.83" height="124.83" style="cursor: pointer;" onclick="clickUpload()">
+                        <div class="text-center" style="margin-top: 0px;">上传语音文件</div>
+                    </div>
                 </div>
             </div>
             <div class="audio-text" style="padding: 0px 0px 0px;">
@@ -67,16 +73,16 @@
                             <div class="banner-service">
                                 <div class="voice-wrap" style="margin-bottom: 0px; height: 263px;">
                                     <div class="voice-listen" style="padding-bottom: 0px; height: 100%;width: 98%;margin-left: 30px;">
-                                        <div id="voiceFir" style="height: 80%;float: left;width: 40%;">
+                                        <div id="voiceFir" style="height: 80%;float: left;width: 46%;margin-left: 2%">
                                             <div class="severBox" style="float: left; height: 100%;width: 100%;">
                                                 <div class="controls my_controls">
                                                     <div class="btn btn-danger" style="margin-right: 10px">清除日志</div>
                                                     <div class="btn btn-danger" style="margin-right: 10px">清除结果</div>
                                                 </div>
-                                                <pre readonly="readonly" style="height: 80%; border: 2px solid rgb(220, 228, 236); border-radius: 4px; width: 100%; margin-top: 10px; resize: none;"></pre>
+                                                <pre id="log" readonly="readonly" style="height: 80%; border: 2px solid rgb(220, 228, 236); border-radius: 4px; width: 100%; margin-top: 10px; resize: none;"></pre>
                                             </div>
                                         </div>
-                                        <div id="voiceSec" style="height: 80%;float: left;width: 40%;margin-left: 10px;">
+                                        <div id="voiceSec" style="height: 80%;float: right;width: 46%;margin-left: 2%;">
                                             <textarea class="text-area" style="height: 80%; border: 2px solid rgb(220, 228, 236); border-radius: 4px; width: 100%; margin-top: 55px; resize: none;" id="mainArea"></textarea>
                                         </div>
                                     </div>
@@ -90,16 +96,6 @@
         </div>
     </div>
 </div>
-<div id="footer" th:insert="fragments/fragment::footer"></div>
-<script>
-    $(function(){
-        var height = window.innerHeight - 240;
-        $('#page-content-wrapper').height(height);
-        $(window).resize(function(){
-            var height = window.innerHeight - 240;
-            $('#page-content-wrapper').height(height);
-        })
-    })
-</script>
+<div id="footer" th:insert="fragments/fragment::footer" class="my_footer"></div>
 </body>
 </html>

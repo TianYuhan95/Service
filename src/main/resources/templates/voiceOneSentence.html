@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" class="my_html">
 <head>
     <title>AI开放平台-以语音交互为核心的人工智能开放平台</title>
 
@@ -24,10 +24,10 @@
     <script th:src="@{/js/view/main.js}"></script>
 
 </head>
-<body>
+<body class="my_body">
 <!-- header-section-starts -->
-<div id="header" th:insert="fragments/fragment::header"></div>
-<div id="wrapper">
+<div id="header" th:insert="fragments/fragment::header" class="my_header"></div>
+<div id="wrapper" class="my_wrapper">
     <div class="overlay"></div>
     <div id="SideBar" th:insert="fragments/fragment::sidebar"></div>
     <div id="page-content-wrapper">
@@ -62,19 +62,19 @@
                         <div class="banner-service">
                             <div class="voice-wrap" style="margin-bottom: 0px; height: 282px;">
                                 <div class="voice-listen" style="padding-bottom: 0px; height: 100%;width: 98%;margin-left: 30px;">
-                                    <div id="voiceFir" style="height: 80%;float: left;width: 40%;">
-                                        <div class="severBox" style="float: left; height: 100%;width: 100%;">
-                                            <div class="controls my_controls">
-                                                <div class="btn btn-danger" style="margin-right: 10px">清除日志</div>
-                                                <div class="btn btn-danger" style="margin-right: 10px">清除结果</div>
-                                            </div>
-                                            <textarea readonly="readonly"
-                                                      style="height: 80%; border: 2px solid rgb(220, 228, 236); border-radius: 4px; width: 100%; margin-top: 10px; resize: none;"></textarea>
+                                    <div style="height: 190px; position: relative;">
+                                        <div id="voiceFir" class="severBox" style="float: left; height: 100%;width: 46%;margin-left: 2%;">
+                                                <div class="controls my_controls">
+                                                    <div class="btn btn-danger" style="margin-right: 10px">清除日志</div>
+                                                    <div class="btn btn-danger" style="margin-right: 10px">清除结果</div>
+                                                </div>
+                                                <pre readonly="readonly"
+                                                          style="height: 80%;"></pre>
                                         </div>
-                                    </div>
-                                    <div id="voiceSec" style="height: 80%;float: left;width: 40%;margin-left: 10px;">
+                                        <div id="voiceSec" style="height: 100%;float: right;width: 46%;margin-left: 2%;">
                                         <textarea class="text-area"
-                                                  style="height: 80%; border: 2px solid rgb(220, 228, 236); border-radius: 4px; width: 100%; margin-top: 11%; resize: none;" id="mainArea"></textarea>
+                                                  style="height: 80%;border-radius: 3px; width: 100%; margin-top: 53px;" id="mainArea"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -85,24 +85,23 @@
         </div>
     </div>
     <div class="toTop el-tooltip" style="display: none;"><span class="el-icon-arrow-up"></span></div>
-    <div id="footer" th:insert="fragments/fragment::footer"></div>
 </div>
-
+<div id="footer" th:insert="fragments/fragment::footer" class="my_footer"></div>
 
 <script th:src="@{/js/voice-processing.js}"></script>
 <script th:src="@{/js/record-upload/mic-recorder.js}"></script>
 <!--<script th:src="@{/js/manifest.208cd90c1521811b0c99.js?26eb823d0896298c53dd}"></script>-->
 <!--<script th:src="@{/js/vendor.3d1c8a04268b9742287e.js?26eb823d0896298c53dd}"></script>-->
 <!--<script th:src="@{/js/module/index.17670862aec891136c91.js?26eb823d0896298c53dd}"></script>-->
-<script>
-    $(function(){
-        var height = window.innerHeight - 240;
-        $('#page-content-wrapper').height(height);
-        $(window).resize(function(){
-            var height = window.innerHeight - 240;
-            $('#page-content-wrapper').height(height);
-        })
-    })
-</script>
+<!--<script>-->
+    <!--$(function(){-->
+        <!--var height = window.innerHeight - 240;-->
+        <!--$('#page-content-wrapper').height(height);-->
+        <!--$(window).resize(function(){-->
+            <!--var height = window.innerHeight - 240;-->
+            <!--$('#page-content-wrapper').height(height);-->
+        <!--})-->
+    <!--})-->
+<!--</script>-->
 </body>
 </html>

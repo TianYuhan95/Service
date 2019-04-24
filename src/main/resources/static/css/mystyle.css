@@ -21,7 +21,7 @@
 
 .my_container{
     float: left;
-    min-width: 35%;
+    min-width: 37%;
     background-color: white;
     border: 1px solid gray;
     width: 400px;
@@ -34,4 +34,21 @@
 
 .my_controls{
     margin: 8px auto ;
+}
+
+.my_body,.my_html{
+    height: 100%;
+}
+
+.my_body{
+    display: flex;
+    flex-direction: column;
+}
+
+.my_header,.my_footer{
+    flex: 0 0 auto;
+}
+
+.my_wrapper{
+    flex: 1 0 auto;
 }
