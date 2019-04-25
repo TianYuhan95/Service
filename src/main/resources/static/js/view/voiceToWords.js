@@ -89,14 +89,14 @@ function startUpload(){
                 //res.data.transcript表示转文本结果
                 if(res.data.isFinish == 1){
                     console.log(res.data.transcript);
-                    $("#log").text(new Date().format('yyyy/MM/dd hh:mm:ss ')+" 转写进度:"+res.data.rare+'\n'+$("#log").text());
+                    $("#log").text(new Date().format('yyyy/MM/dd hh:mm:ss ')+" 转写进度:"+res.data.rare*100+'%'+'\n'+$("#log").text());
                     $("#mainArea").val(res.data.transcript);
                     // clearInterval(startUploadInteval);
                     clearTimeout(startUpTimeout);
                 }else if (i>=150){
                     alert("已超时，请重试");
                 } else {
-                    $("#log").text(new Date().format('yyyy/MM/dd hh:mm:ss ')+" 转写进度:"+res.data.rare+'\n'+$("#log").text());
+                    $("#log").text(new Date().format('yyyy/MM/dd hh:mm:ss ')+" 转写进度:"+res.data.rare*100+'%'+'\n'+$("#log").text());
                 }
             }else{}
         },
@@ -104,7 +104,7 @@ function startUpload(){
         }
     });
     i++;
-    startUpTimeout = setTimeout(startUpload,500);
+    startUpTimeout = setTimeout(startUpload,1000);
 }
 
 /**
